@@ -45,4 +45,4 @@ The @WSJ Wall Street Journal loves to write badly about me. They better be caref
 ```
 
 
-Now, go forth and support democracy! 
+:us: Now, go forth and support democracy! :us:
