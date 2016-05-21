@@ -35,10 +35,15 @@ This writes your entire tweet cache to a text file, separated by newlines:
 
 ```
 The new NBC POLL has me in first place but said I was third in the debate - I demand a recount (just kidding!). EVERY other poll had me #1.
+
 I see Marco Rubio just landed another billionaire to give big money to his Superpac, which are total scams. Marco must address him as "SIR"!
+
 I am leaving for Norfolk, Virginia - the great battleship U.S.S. Wisconsin - for a big rally and really big crowd. See you soon!
+
 I told you so-@politico just lost it's top person. Poor results and no money to pay him. If they were legit, they would be doing far better!
+
 The @WSJ Wall Street Journal loves to write badly about me. They better be careful or I will unleash big time on them. Look forward to it!
+
 .@ColinCowherd said such nice things about me during the debate that I thought I'd do his show, @TheHerd, on Monday (2:30pm EST).
 ```
 
