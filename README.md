@@ -39,4 +39,4 @@ This writes your entire tweet cache to a text file, separated by newlines:
 `The @WSJ Wall Street Journal loves to write badly about me. They better be careful or I will unleash big time on them. Look forward to it!`
 `.@ColinCowherd said such nice things about me during the debate that I thought I'd do his show, @TheHerd, on Monday (2:30pm EST).`
 
-Now, go forth and support democracy!
+Now, go forth and support democracy! 
