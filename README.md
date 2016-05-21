@@ -1,6 +1,8 @@
 # fifty-shades-of-trump
 
-This is a work in progress to support the "Fifty Shades of Trump" Twitter bot. Currently, the script contains a tweet scraping utility, `scrape_tweets.py`, which scrapes tweets in batches of 200 (the max allowed by Twitter's GET status API) and stores the raw results into a database. The utility also supports an `update_tweet_db` function for maintaining a database of all tweets that can be continuously updated (allowing the user to obtain more than 3200 tweets by repeated scrapes), and an `output_text` function for writing a single text file with each tweet in the entire tweet cache separated by a newline.
+This is a work in progress to support the forthcoming "Fifty Shades of Trump" Twitter bot. 
+
+Currently, the script contains a tweet scraping utility, `scrape_tweets.py`, which scrapes tweets in batches of 200 (the max allowed by Twitter's GET status API) and stores the raw results into a database. The utility also supports an `update_tweet_db` function for maintaining a database of all tweets that can be continuously updated (allowing the user to obtain more than 3200 tweets by repeated scrapes), and an `output_text` function for writing a single text file with each tweet in the entire tweet cache separated by a newline.
 
 #Usage: 3 steps to tweet text
 
@@ -19,7 +21,7 @@ fetching tweet batch 5 for user realdonaldtrump
 ...
 ```
 
-This builds a databse that you can use to create/update your cache of tweets (which is the only way to exceed Twitter's limit of 3200 tweets--there is no convenient way to get tweets older than user's most recent 3200 tweets, so use this to build and update your cache of tweets regularly).
+This builds a database that you can use to create/update your cache of tweets (which is the only way to exceed Twitter's limit of 3200 tweets--there is no convenient way to get tweets older than user's most recent 3200 tweets, so use this to build and update your cache of tweets regularly).
 
 ##Step 2: `update_tweet_db`
 
