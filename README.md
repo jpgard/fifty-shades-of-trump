@@ -4,7 +4,7 @@ This is a work in progress to support the forthcoming "Fifty Shades of Trump" Tw
 
 Currently, the script contains a tweet scraping utility, `scrape_tweets.py`, which scrapes tweets in batches of 200 (the max allowed by Twitter's GET status API) and stores the raw results into a database. The utility also supports an `update_tweet_db` function for maintaining a database of all tweets that can be continuously updated (allowing the user to obtain more than 3200 tweets by repeated scrapes), and an `output_text` function for writing a single text file with each tweet in the entire tweet cache separated by a newline.
 
-#Usage: 3 steps to tweet text
+#Usage: 3 steps to scraping tweet text
 
 ##Step 1: `scrape`
 
@@ -21,7 +21,7 @@ fetching tweet batch 5 for user realdonaldtrump
 ...
 ```
 
-This builds a database that you can use to create/update your cache of tweets (which is the only way to exceed Twitter's limit of 3200 tweets--there is no convenient way to get tweets older than user's most recent 3200 tweets, so use this to build and update your cache of tweets regularly).
+This builds a database that you can use to create/update your cache of tweets (which is the only way to exceed Twitter's limit of 3200 tweets--there is no convenient way to get tweets older than user's most recent 3200 tweets, so use this to build and update your cache of tweets regularly). This script will be modified to prompt you for the twitter handle; right now it goes straight for DJT.
 
 ##Step 2: `update_tweet_db`
 
@@ -44,5 +44,6 @@ The @WSJ Wall Street Journal loves to write badly about me. They better be caref
 .@ColinCowherd said such nice things about me during the debate that I thought I'd do his show, @TheHerd, on Monday (2:30pm EST). 
 ```
 
+The next step is to train a model (HMM n-gram model, neural net, etc.) using these tweets (and potentially other text), and to use the model to post pseudorandom text and post it to a Twitter account using a module like Tweepy.
 
 :us: Now, go forth and support democracy! :us:
