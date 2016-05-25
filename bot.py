@@ -6,10 +6,11 @@
 
 #TODO: docstrings for functions
 
-#TODO: make this a funcy program??
+#TODO: make this a click/cli program??
+
+import tweepy
 
 #load Twitter credentials; you can define below instead
-
 j = json.load(open('../private/twitter_keys.json', 'r'))
 CONSUMER_KEY = j['CONSUMER_KEY']
 CONSUMER_SECRET = j['CONSUMER_SECRET']
@@ -18,7 +19,7 @@ ACCESS_SECRET = j['ACCESS_SECRET']
 
 TWEET_FILE = "robotweets.txt"
 
-import tweepy
+
 
 class TwitterAPI:
     def __init__(self):
