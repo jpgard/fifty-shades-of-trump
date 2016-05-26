@@ -27,7 +27,7 @@ This builds a database that you can use to create/update your cache of tweets (w
 
 `python scrape_tweets.py update_tweet_db`
 
-This uses the results of `scrape` to build a new database, basically a cache of tweets. This is a new table in the existing database (because I like to keep things simple and tidy--fewer files this way). Every time you `scrape`, you can `update_tweet_db` afterward which will automatically add any new tweets to the tweet cache. 
+This uses the results of `scrape` to build a new database, basically a cache of tweets. This is a new table in the existing database (because I like to keep things simple and tidy--fewer files this way). Every time you `scrape`, you can `update_tweet_db` afterward which will automatically add any new tweets to the tweet cache.  **Be patient**--this step might take a minute or two if you scraped lots of tweets.
 
 ##Step 3: `output_text`
 
