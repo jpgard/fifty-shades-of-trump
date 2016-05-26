@@ -87,7 +87,6 @@ def output_text(output_text_filename = OUTPUT_TEXT_FILENAME):
 		for tweet in tweets:
 			tweetfile.write(tweet + '\n')
 			count += 1
-	import ipdb; ipdb.set_trace()
 	click.echo(('wrote %s tweets to %s') % (count, output_text_filename))
 
 
