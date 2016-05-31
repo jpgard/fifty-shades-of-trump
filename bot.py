@@ -56,10 +56,6 @@ class TwitterAPI:
                     pass
             
 
-
-        #self.api.update_status(status=message)
-
-
 if __name__ == "__main__":
     twitter = TwitterAPI()
     twitter.tweet()
