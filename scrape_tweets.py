@@ -10,25 +10,17 @@ CONSUMER_KEY = j['CONSUMER_KEY']
 CONSUMER_SECRET = j['CONSUMER_SECRET']
 ACCESS_TOKEN = j['ACCESS_TOKEN']
 ACCESS_SECRET = j['ACCESS_SECRET']
-
 #UNCOMMENT TO DEFINE MANUALLY INSTEAD
 #CONSUMER_KEY = ''
 #CONSUMER_SECRET = ''
 #ACCESS_TOKEN = ''
 #ACCESS_SECRET = ''
-
 RESULTS_DB_FILENAME = "tweets.db"
 OUTPUT_TEXT_FILENAME = "tweets.txt"
-
 db = dataset.connect('sqlite:///' + RESULTS_DB_FILENAME)
 TABLE = db['raw_tweets']
 ID_TABLE = db['tweets_by_id']
-
 TWITTER_USER = 'realdonaldtrump'
-
-
-#user_id = 2507387
-#make initial request for most recent tweets (200 is the maximum allowed count)
 
 oauth = OAuth(ACCESS_TOKEN, ACCESS_SECRET, CONSUMER_KEY, CONSUMER_SECRET)
 twitter = Twitter(auth=oauth)
@@ -40,7 +32,6 @@ def cli():
 	Tool to scrape user tweets.
 	"""
 	pass
-
 
 def extract_tweets_and_ids(results):
 	"""
@@ -57,8 +48,6 @@ def extract_tweet_details(results):
 	Generator yielding dict of full tweet details for each tweet.
 	"""
 	#TODO
-	
-
 	click.echo(
 		"This should not print-extract_tweet_details is not implemented yet.")
 
@@ -66,15 +55,10 @@ def extract_tweet_details(results):
 @click.argument('output_csv', type=click.File('wb'))
 def output_csv(output_csv):
 	'''Write csv file with more detailed tweet data'''
-
 	#TODO
 	#create csvwriter and write row for each tweet
-
 	click.echo(
 		"This should not print - output_csv is not implemented yet.")
-
-
-
 
 @cli.command()
 def output_text(output_text_filename = OUTPUT_TEXT_FILENAME): 
@@ -88,7 +72,6 @@ def output_text(output_text_filename = OUTPUT_TEXT_FILENAME):
 			tweetfile.write(tweet + '\n')
 			count += 1
 	click.echo(('wrote %s tweets to %s') % (count, output_text_filename))
-
 
 def request_tweet_batch(batch_num, max_id):
 	click.echo("fetching tweet batch %s for user %s" % (batch_num, TWITTER_USER))
@@ -117,8 +100,6 @@ def update_tweet_db():
 
 	click.echo("tweet text database updated.")
 
-
-
 @cli.command()
 def scrape():
 	'''Request tweets from API in batches of 200.'''
@@ -137,8 +118,6 @@ def scrape():
 		time.sleep(5.0)
 
 	click.echo("complete.")
-
-
 
 if __name__ == '__main__':
 	cli()
