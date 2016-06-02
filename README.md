@@ -44,6 +44,17 @@ The @WSJ Wall Street Journal loves to write badly about me. They better be caref
 .@ColinCowherd said such nice things about me during the debate that I thought I'd do his show, @TheHerd, on Monday (2:30pm EST). 
 ```
 
-The next step is to train a model (HMM n-gram model, neural net, etc.) using these tweets (and potentially other text), and to use the model to post pseudorandom text and post it to a Twitter account using a module like Tweepy.
+The next step is to train a model (HMM n-gram model, neural network, etc.) using these tweets (and potentially other text), and to use the model to post pseudorandom text and post it to a Twitter account using a module like Tweepy.
+
+
+#Tweet Generation Using TensorFlow LSTM:
+
+This script (forthcoming) uses Google's TensorFlow library to train a LSTM model on the tweets generated using the steps above, as well as whichever saucy text you'd like to use.
+
+If you're new to LSTMs or are interested in learning more, check out the following resources:
+
+* [Understanding LSTMs](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)
+* [The Unreasonable Effectiveness of Recurrent Neural Networks](http://karpathy.github.io/2015/05/21/rnn-effectiveness/)
+* [Google TensorFlow Tutorial - RNNs for Language Modeling](https://www.tensorflow.org/versions/master/tutorials/recurrent/index.html#tutorial-files)
 
 :us: Now, go forth and support democracy! :us:
