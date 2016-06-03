@@ -120,7 +120,7 @@ def genSentence(markovLength):
         sent += curr
     return sent
 
-def sentence_from_file(filename, markovLength = 1):
+def sentence_from_file(filename, markovLength = 2):
     
     buildMapping(wordlist(filename), markovLength)
     return genSentence(markovLength)
