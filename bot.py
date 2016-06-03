@@ -8,7 +8,7 @@
 
 #TODO: make this a click/cli program??
 
-import tweepy, json
+import tweepy, json, markov_sentence_generator
 
 #load Twitter credentials; you can define below instead
 j = json.load(open('../private/trump_keys.json', 'r'))
@@ -33,9 +33,12 @@ class TwitterAPI:
         self.api = tweepy.API(auth)
 
     def tweet(self):
+    
+    #Individually pull tweets from TWEET_FILE, line by line from top. 
+    #Prompt user for approval; take action based on user input.
+    
         with open(TWEET_FILE, 'r') as robotweets:
             while True:
-            #TODO: implement prompt user check for tweet approval 
                 t = robotweets.readline()
                 print (
                     "TWEET: \n\n%s\n\nWOULD YOU LIKE TO APPROVE THIS TWEET?" % (t))
@@ -54,8 +57,37 @@ class TwitterAPI:
                 else:
                     print("INVALID RESPONSE, TRY AGAIN.")
                     pass
+
+    def markov_tweet(self, tweet_file = TWEET_FILE, markovLength = 2):
+        
+        #Generate tweets using HMM from text in tweet_file.
+        #Prompt user for approval; take action based on user input.
+
+        while True:
+            print("\nFetching your tweet from the Trump Train...\n")
+            t = markov_sentence_generator.sentence_from_file(
+                tweet_file, markovLength)
+            print (
+                "TWEET: \n\n%s\n\nWOULD YOU LIKE TO APPROVE THIS TWEET?" % (t))
+            response = input(
+                "TYPE 1 for 'YES' or 0 for 'NO', 'E' for EXIT:\n")
+            
+            if response == '1':
+                self.api.update_status(status = t)
+                print("%s TWEETED: %s" %(HANDLE, t))
+                break
+            if response == '0':
+                pass
+            if response == 'E':
+                print('EXITED.')
+                break
+            else:
+                print("INVALID RESPONSE, TRY AGAIN.")
+                pass
+
             
 
 if __name__ == "__main__":
     twitter = TwitterAPI()
-    twitter.tweet()
+    #twitter.tweet()
+    twitter.markov_tweet(tweet_file = TWEET_FILE, markovLength = 1)
