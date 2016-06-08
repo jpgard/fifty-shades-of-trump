@@ -8,7 +8,7 @@
 
 #TODO: make this a click/cli program??
 
-import tweepy, json, markov_sentence_generator
+import tweepy, json, markov_sentence_generator, click
 
 #load Twitter credentials; you can define below instead
 j = json.load(open('../private/trump_keys.json', 'r'))
@@ -21,6 +21,7 @@ TWEET_FILE = "robotweets.txt"
 HANDLE = "@50shadesofDJT"
 
 
+#TODO: change to click interface; consider merging with scrape_tweets
 
 class TwitterAPI:
     def __init__(self):
@@ -83,9 +84,7 @@ class TwitterAPI:
                 break
             else:
                 print("INVALID RESPONSE, TRY AGAIN.")
-                pass
-
-            
+                pass      
 
 if __name__ == "__main__":
     twitter = TwitterAPI()
