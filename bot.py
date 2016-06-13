@@ -5,7 +5,6 @@
 #or change TWEET_FILE to file of pre-generated tweets
 
 #TODO: docstrings for functions
-
 #TODO: make this a click/cli program??
 
 import tweepy, json, markov_sentence_generator, click
@@ -17,8 +16,8 @@ CONSUMER_SECRET = j['CONSUMER_SECRET']
 ACCESS_TOKEN = j['ACCESS_TOKEN']
 ACCESS_SECRET = j['ACCESS_SECRET']
 
-TWEET_FILE = "robotweets.txt"
-HANDLE = "@50shadesofDJT"
+TWEET_FILE = '/Users/joshgardner/Documents/Github/private/tweets_fifty.txt'
+HANDLE = '@50shadesofDJT'
 
 
 #TODO: change to click interface; consider merging with scrape_tweets
@@ -42,13 +41,13 @@ class TwitterAPI:
             while True:
                 t = robotweets.readline()
                 print (
-                    "TWEET: \n\n%s\n\nWOULD YOU LIKE TO APPROVE THIS TWEET?" % (t))
+                    'TWEET: \n\n%s\n\nWOULD YOU LIKE TO APPROVE THIS TWEET?' % (t))
                 response = input(
-                    "TYPE 1 for 'YES' or 0 for 'NO', 'E' for EXIT:\n")
+                    'TYPE 1 for \'YES\' or 0 for \'NO\', \'E\' for EXIT:\n')
                 
                 if response == '1':
                     self.api.update_status(status = t)
-                    print("%s TWEETED: %s" %(HANDLE, t))
+                    print('{0:s} TWEETED: {1:s}'.format(HANDLE, t))
                     break
                 if response == '0':
                     pass
@@ -56,7 +55,7 @@ class TwitterAPI:
                     print('EXITED.')
                     break
                 else:
-                    print("INVALID RESPONSE, TRY AGAIN.")
+                    print('INVALID RESPONSE, TRY AGAIN.')
                     pass
 
     def markov_tweet(self, tweet_file = TWEET_FILE, markovLength = 2):
@@ -65,15 +64,17 @@ class TwitterAPI:
         #Prompt user for approval; take action based on user input.
 
         while True:
-            print("\nFetching your tweet from the Trump Train...\n")
+            print('\nFetching your tweet from the Trump Train...\n')
             t = markov_sentence_generator.sentence_from_file(
                 tweet_file, markovLength)
             print (
-                "TWEET: \n\n%s\n\nWOULD YOU LIKE TO APPROVE THIS TWEET?" % (t))
+                'TWEET: \n\n%s\n\nWOULD YOU LIKE TO APPROVE THIS TWEET?' % (t))
             response = input(
                 "TYPE 1 for 'YES' or 0 for 'NO', 'E' for EXIT:\n")
             
             if response == '1':
+                #TODO: add handling for tweets >140 characters
+                #TODO: option to "tweet with hashtag" and add hashtag
                 self.api.update_status(status = t)
                 print("%s TWEETED: %s" %(HANDLE, t))
                 break
