@@ -5,7 +5,8 @@
 #or change TWEET_FILE to file of pre-generated tweets
 
 #TODO: docstrings for functions
-#TODO: make this a click/cli program??
+#TODO: make this a click/cli program
+#TODO: update to python3
 
 import tweepy, json, markov_sentence_generator, click
 
