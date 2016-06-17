@@ -63,7 +63,7 @@ def output_csv(output_csv):
 @cli.command()
 def output_text(output_text_filename = OUTPUT_TEXT_FILENAME): 
 	#FLAG - parameters
-	'''Write all tweets in the databse into lines in a text file.'''
+	'''Write all tweets in the database into lines in a text file.'''
 	tweets = [row['text'] for row in ID_TABLE.all()]
 	count = 0
 	with open(output_text_filename, 'w') as tweetfile:
