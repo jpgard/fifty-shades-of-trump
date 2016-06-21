@@ -91,4 +91,4 @@ class TwitterAPI:
 if __name__ == "__main__":
     twitter = TwitterAPI()
     #twitter.tweet()
-    twitter.markov_tweet(tweet_file = TWEET_FILE, markovLength = 1)
+    twitter.markov_tweet(tweet_file = TWEET_FILE, markovLength = 2)
