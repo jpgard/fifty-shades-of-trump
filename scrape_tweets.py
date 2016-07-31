@@ -3,18 +3,14 @@ from twitter import Twitter, OAuth, TwitterHTTPError, TwitterStream
 import dataset, time, json, math, click
 import funcy as fy
 
-#load Twitter credentials; you can define below instead
+#load Twitter credentials
 
 j = json.load(open('../private/twitter_keys.json', 'r'))
 CONSUMER_KEY = j['CONSUMER_KEY']
 CONSUMER_SECRET = j['CONSUMER_SECRET']
 ACCESS_TOKEN = j['ACCESS_TOKEN']
 ACCESS_SECRET = j['ACCESS_SECRET']
-#UNCOMMENT TO DEFINE MANUALLY INSTEAD
-#CONSUMER_KEY = ''
-#CONSUMER_SECRET = ''
-#ACCESS_TOKEN = ''
-#ACCESS_SECRET = ''
+
 RESULTS_DB_FILENAME = "tweets.db"
 OUTPUT_TEXT_FILENAME = "tweets.txt"
 db = dataset.connect('sqlite:///' + RESULTS_DB_FILENAME)
