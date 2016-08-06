@@ -14,3 +14,7 @@ tweets.db
 .idea/misc.xml
 
 __pycache__/markov_sentence_generator.cpython-35.pyc
+
+tweets.db
+
+*.pyc
