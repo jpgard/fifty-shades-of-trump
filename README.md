@@ -31,7 +31,7 @@ This uses the results of `scrape` to build a new database, basically a cache of 
 
 ##Step 3: `output_text`
 
-`python scrape_tweets.py update_tweet_db`
+`python scrape_tweets.py output_text`
 
 This writes your entire tweet cache to a text file, separated by newlines:
 
